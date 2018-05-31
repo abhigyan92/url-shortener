@@ -1,1 +1,3 @@
-abhigyan
+= form_for @url do |f|
+  = f.text_field :original_url, as: :string, placeholder: "Enter the URL you want to shorten...", label: false
+  = f.submit "Shorten!"

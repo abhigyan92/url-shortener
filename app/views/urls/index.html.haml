@@ -1,0 +1,17 @@
+%table
+  %tr
+    %th
+      original url
+    %th
+      shortened url
+- @urls.each do |url|
+  %tr
+    %td
+      = url.original_url
+    %td
+      = "#{request.base_url}/#{url.shortened_url}"
+    %td
+      = link_to "Visit" , url.original_url, target: :_blank
+    %td
+      = link_to "delete", url, method: :delete, data: { confirm: "Are you sure?" }
+  %br
