@@ -23,6 +23,8 @@ class UrlsController < ApplicationController
 	end
 
 	def show
+    @url = Url.find_by(shortened_url: params[:shortened_url])
+    redirect_to @url.original_url
 	end
 
 	def destroy
